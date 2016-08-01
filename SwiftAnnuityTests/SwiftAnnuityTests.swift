@@ -11,26 +11,63 @@ import XCTest
 
 class SwiftAnnuityTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testGetAmountFromPrincipal() {
+        
+        let annuity = Annuity()
+        let principal = NSDecimalNumber(string: "100000")
+        let rate = NSDecimalNumber(string: "0.03")
+        let term = 25
+        
+        XCTAssertEqual(roundDownToInt(annuity.amount(principal, rate: rate, term: term, frequency: 1)), 5742)
+        
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testGetPrincipalFromAmount() {
+        
+        let annuity = Annuity()
+        let amount = NSDecimalNumber(string: "7500")
+        let rate = NSDecimalNumber(string: "0.04")
+        let term = 15
+        
+        XCTAssertEqual(roundDownToInt(annuity.principal(amount, rate: rate, term: term, frequency: 1)), 83387)
+        
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGetAmountFromPrincipalForMonthly() {
+        
+        let annuity = Annuity()
+        let principal = NSDecimalNumber(string: "100000")
+        let rate = NSDecimalNumber(string: "0.03")
+        let term = 25
+        let frequency = 12
+        
+        XCTAssertEqual(roundDownToInt(annuity.amount(principal, rate: rate, term: term, frequency: frequency)), 474)
+        
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    func testGetPrincipalFromAmountForMonthly() {
+        
+        let annuity = Annuity()
+        let amount = NSDecimalNumber(string: "620")
+        let rate = NSDecimalNumber(string: "0.04")
+        let term = 15
+        let frequency = 12
+        
+        XCTAssertEqual(roundDownToInt(annuity.principal(amount, rate: rate, term: term, frequency: frequency)), 83819)
+        
+    }
+    
+    func roundDownToInt(value: NSDecimalNumber) -> Int {
+        return value.decimalNumberByRoundingAccordingToBehavior(
+            NSDecimalNumberHandler(
+                roundingMode: .RoundDown,
+                scale: 0,
+                raiseOnExactness: false,
+                raiseOnOverflow: false,
+                raiseOnUnderflow: false,
+                raiseOnDivideByZero: false
+            )
+        ).integerValue
     }
     
 }
