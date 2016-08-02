@@ -11,49 +11,184 @@ import XCTest
 
 class SwiftAnnuityTests: XCTestCase {
     
-    func testGetAmountFromPrincipal() {
+    func testGetPaymentFromPrincipal() {
         
-        let annuity = Annuity()
+        
         let principal = NSDecimalNumber(string: "100000")
         let rate = NSDecimalNumber(string: "0.03")
         let term = 25
+        let annuity = Annuity(
+            principal: principal,
+            rate: rate,
+            term: term
+        )
         
-        XCTAssertEqual(roundDownToInt(annuity.amount(principal, rate: rate, term: term, frequency: 1)), 5742)
+        // Basic sanity checks
+        XCTAssertEqual(annuity.principal, principal)
+        XCTAssertEqual(annuity.rate, rate)
+        XCTAssertEqual(annuity.term, term)
+        XCTAssertEqual(annuity.frequency, 1)
+        XCTAssertEqual(annuity.paymentCount, term)
+        
+        XCTAssertEqual(roundDownToInt(annuity.total), 143569)
         
     }
     
-    func testGetPrincipalFromAmount() {
+    func testGetTotalFromPrincipal() {
         
-        let annuity = Annuity()
-        let amount = NSDecimalNumber(string: "7500")
+        let principal = NSDecimalNumber(string: "100000")
+        let rate = NSDecimalNumber(string: "0.03")
+        let term = 25
+        let annuity = Annuity(
+            principal: principal,
+            rate: rate,
+            term: term
+        )
+        
+        // Basic sanity checks
+        XCTAssertEqual(annuity.principal, principal)
+        XCTAssertEqual(annuity.rate, rate)
+        XCTAssertEqual(annuity.term, term)
+        XCTAssertEqual(annuity.frequency, 1)
+        XCTAssertEqual(annuity.paymentCount, term)
+        
+        XCTAssertEqual(roundDownToInt(annuity.payment), 5742)
+        
+    }
+    
+    func testGetTotalFromPayment() {
+        
+        let payment = NSDecimalNumber(string: "7500")
         let rate = NSDecimalNumber(string: "0.04")
         let term = 15
+        let annuity = Annuity(
+            payment: payment,
+            rate: rate,
+            term: term
+        )
         
-        XCTAssertEqual(roundDownToInt(annuity.principal(amount, rate: rate, term: term, frequency: 1)), 83387)
+        // Basic sanity checks
+        XCTAssertEqual(annuity.payment, payment)
+        XCTAssertEqual(annuity.rate, rate)
+        XCTAssertEqual(annuity.term, term)
+        XCTAssertEqual(annuity.frequency, 1)
+        XCTAssertEqual(annuity.paymentCount, term)
+
+        XCTAssertEqual(annuity.total, NSDecimalNumber(string: "112500"))
+        
+    }
+    
+    func testGetPrincipalFromPayment() {
+        
+        let payment = NSDecimalNumber(string: "7500")
+        let rate = NSDecimalNumber(string: "0.04")
+        let term = 15
+        let annuity = Annuity(
+            payment: payment,
+            rate: rate,
+            term: term
+        )
+        
+        // Basic sanity checks
+        XCTAssertEqual(annuity.payment, payment)
+        XCTAssertEqual(annuity.rate, rate)
+        XCTAssertEqual(annuity.term, term)
+        XCTAssertEqual(annuity.frequency, 1)
+        XCTAssertEqual(annuity.paymentCount, term)
+        
+        XCTAssertEqual(roundDownToInt(annuity.principal), 83387)
+        
+    }
+    
+    func testGetPrincipalFromTotal() {
+        
+        let total = NSDecimalNumber(string: "600000")
+        let rate = NSDecimalNumber(string: "0.05")
+        let term = 15
+        let annuity = Annuity(
+            total: total,
+            rate: rate,
+            term: term
+        )
+        
+        // Basic sanity checks
+        XCTAssertEqual(annuity.total, total)
+        XCTAssertEqual(annuity.rate, rate)
+        XCTAssertEqual(annuity.term, term)
+        XCTAssertEqual(annuity.frequency, 1)
+        XCTAssertEqual(annuity.paymentCount, term)
+        
+        XCTAssertEqual(roundDownToInt(annuity.principal), 415186)
+        
+    }
+    
+    func testGetPaymentFromTotal() {
+        
+        let total = NSDecimalNumber(string: "600000")
+        let rate = NSDecimalNumber(string: "0.05")
+        let term = 15
+        let annuity = Annuity(
+            total: total,
+            rate: rate,
+            term: term
+        )
+        
+        // Basic sanity checks
+        XCTAssertEqual(annuity.total, total)
+        XCTAssertEqual(annuity.rate, rate)
+        XCTAssertEqual(annuity.term, term)
+        XCTAssertEqual(annuity.frequency, 1)
+        XCTAssertEqual(annuity.paymentCount, term)
+        
+        XCTAssertEqual(roundDownToInt(annuity.payment), 40000)
         
     }
     
     func testGetAmountFromPrincipalForMonthly() {
         
-        let annuity = Annuity()
         let principal = NSDecimalNumber(string: "100000")
         let rate = NSDecimalNumber(string: "0.03")
         let term = 25
         let frequency = 12
+        let annuity = Annuity(
+            principal: principal,
+            rate: rate,
+            term: term,
+            frequency: frequency
+        )
         
-        XCTAssertEqual(roundDownToInt(annuity.amount(principal, rate: rate, term: term, frequency: frequency)), 474)
+        // Basic sanity checks
+        XCTAssertEqual(annuity.principal, principal)
+        XCTAssertEqual(annuity.rate, rate)
+        XCTAssertEqual(annuity.term, term)
+        XCTAssertEqual(annuity.frequency, frequency)
+        XCTAssertEqual(annuity.paymentCount, 300)
+        
+        XCTAssertEqual(roundDownToInt(annuity.payment), 474)
         
     }
     
-    func testGetPrincipalFromAmountForMonthly() {
+    func testGetPrincipalFromPaymentForMonthly() {
         
-        let annuity = Annuity()
-        let amount = NSDecimalNumber(string: "620")
+        let payment = NSDecimalNumber(string: "620")
         let rate = NSDecimalNumber(string: "0.04")
         let term = 15
         let frequency = 12
+        let annuity = Annuity(
+            payment: payment,
+            rate: rate,
+            term: term,
+            frequency: frequency
+        )
         
-        XCTAssertEqual(roundDownToInt(annuity.principal(amount, rate: rate, term: term, frequency: frequency)), 83819)
+        // Basic sanity checks
+        XCTAssertEqual(annuity.payment, payment)
+        XCTAssertEqual(annuity.rate, rate)
+        XCTAssertEqual(annuity.term, term)
+        XCTAssertEqual(annuity.frequency, frequency)
+        XCTAssertEqual(annuity.paymentCount, 180)
+        
+        XCTAssertEqual(roundDownToInt(annuity.principal), 83819)
         
     }
     
