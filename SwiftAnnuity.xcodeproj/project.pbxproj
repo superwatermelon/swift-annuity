@@ -13,6 +13,9 @@
 		17C318F81C8A5B57004274BC /* SwiftAnnuity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C318F71C8A5B57004274BC /* SwiftAnnuity.swift */; };
 		17C318FA1C8A6195004274BC /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 17C318F91C8A6195004274BC /* Podfile */; };
 		17C318FC1C8A61E8004274BC /* SwiftAnnuity.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 17C318FB1C8A61E8004274BC /* SwiftAnnuity.podspec */; };
+		17E7E3651D529204000AFBC4 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 17E7E3621D529204000AFBC4 /* LICENSE */; };
+		17E7E3661D529204000AFBC4 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 17E7E3631D529204000AFBC4 /* Podfile.lock */; };
+		17E7E3671D529204000AFBC4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 17E7E3641D529204000AFBC4 /* README.md */; };
 		7D4389AC11E6A16CC0793BFE /* Pods_SwiftAnnuityTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37213968E2F70656F379EDAF /* Pods_SwiftAnnuityTests.framework */; };
 		C301BC804CE7624EA358A73B /* Pods_SwiftAnnuity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17967879440FEBE8F08C4973 /* Pods_SwiftAnnuity.framework */; };
 /* End PBXBuildFile section */
@@ -39,6 +42,9 @@
 		17C318F71C8A5B57004274BC /* SwiftAnnuity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftAnnuity.swift; sourceTree = "<group>"; };
 		17C318F91C8A6195004274BC /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		17C318FB1C8A61E8004274BC /* SwiftAnnuity.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftAnnuity.podspec; sourceTree = "<group>"; };
+		17E7E3621D529204000AFBC4 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		17E7E3631D529204000AFBC4 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
+		17E7E3641D529204000AFBC4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		37213968E2F70656F379EDAF /* Pods_SwiftAnnuityTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftAnnuityTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B6B26F7A822EC0FA1BDBE9 /* Pods-SwiftAnnuityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAnnuityTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftAnnuityTests/Pods-SwiftAnnuityTests.debug.xcconfig"; sourceTree = "<group>"; };
 		50D5878EA995D851801BC57E /* Pods-SwiftAnnuity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAnnuity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftAnnuity/Pods-SwiftAnnuity.debug.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +75,9 @@
 		17C318CF1C8A5974004274BC = {
 			isa = PBXGroup;
 			children = (
+				17E7E3621D529204000AFBC4 /* LICENSE */,
+				17E7E3631D529204000AFBC4 /* Podfile.lock */,
+				17E7E3641D529204000AFBC4 /* README.md */,
 				17C318FB1C8A61E8004274BC /* SwiftAnnuity.podspec */,
 				17C318F91C8A6195004274BC /* Podfile */,
 				17C318DB1C8A5974004274BC /* SwiftAnnuity */,
@@ -225,7 +234,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17E7E3651D529204000AFBC4 /* LICENSE in Resources */,
 				17C318FA1C8A6195004274BC /* Podfile in Resources */,
+				17E7E3661D529204000AFBC4 /* Podfile.lock in Resources */,
 				17C318FC1C8A61E8004274BC /* SwiftAnnuity.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17E7E3671D529204000AFBC4 /* README.md in Sources */,
 				17C318F81C8A5B57004274BC /* SwiftAnnuity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
