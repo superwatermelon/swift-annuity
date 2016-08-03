@@ -209,23 +209,23 @@ public class SwiftAnnuity {
     private let _payment: AnnuityPayment
     private let _total: AnnuityTotal
     
-    let frequency: Int
-    let rate: NSDecimalNumber
-    let term: Int
+    public let frequency: Int
+    public let rate: NSDecimalNumber
+    public let term: Int
     
-    lazy var principal: NSDecimalNumber = {
+    public lazy var principal: NSDecimalNumber = {
         return self._principal.value
     }()
     
-    lazy var payment: NSDecimalNumber = {
+    public lazy var payment: NSDecimalNumber = {
         return self._payment.value
     }()
     
-    lazy var total: NSDecimalNumber = {
+    public lazy var total: NSDecimalNumber = {
         return self._total.value
     }()
     
-    lazy var paymentCount: Int = {
+    public lazy var paymentCount: Int = {
         return self.frequency * self.term
     }()
     
@@ -241,7 +241,7 @@ public class SwiftAnnuity {
         
     }
     
-    convenience init(principal: NSDecimalNumber, rate: NSDecimalNumber, term: Int, frequency: Int = 1) {
+    public convenience init(principal: NSDecimalNumber, rate: NSDecimalNumber, term: Int, frequency: Int = 1) {
         
         self.init(
             principal: AnnuityPrincipalValue(value: principal),
@@ -264,7 +264,7 @@ public class SwiftAnnuity {
         
     }
     
-    convenience init(total: NSDecimalNumber, rate: NSDecimalNumber, term: Int, frequency: Int = 1) {
+    public convenience init(total: NSDecimalNumber, rate: NSDecimalNumber, term: Int, frequency: Int = 1) {
         
         self.init(
             principal: AnnuityPrincipalFromTotal(
@@ -286,7 +286,7 @@ public class SwiftAnnuity {
         
     }
     
-    convenience init(payment: NSDecimalNumber, rate: NSDecimalNumber, term: Int, frequency: Int = 1) {
+    public convenience init(payment: NSDecimalNumber, rate: NSDecimalNumber, term: Int, frequency: Int = 1) {
         
         self.init(
             principal: AnnuityPrincipalFromPayment(
