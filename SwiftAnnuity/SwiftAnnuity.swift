@@ -25,7 +25,7 @@ class AnnuityPrincipalFromPayment: AnnuityPrincipal {
     private let frequency: Int
     
     lazy var value: NSDecimalNumber = {
-        return Annuity.getPrincipal(
+        return SwiftAnnuity.getPrincipal(
             payment: self.payment,
             rate: self.rate,
             term: self.term,
@@ -50,7 +50,7 @@ class AnnuityPrincipalFromTotal: AnnuityPrincipal {
     private let frequency: Int
     
     lazy var value: NSDecimalNumber = {
-        return Annuity.getPrincipal(
+        return SwiftAnnuity.getPrincipal(
             total: self.total,
             rate: self.rate,
             term: self.term,
@@ -85,7 +85,7 @@ class AnnuityPaymentFromPrincipal: AnnuityPayment {
     private let frequency: Int
     
     lazy var value: NSDecimalNumber = {
-        return Annuity.getPayment(
+        return SwiftAnnuity.getPayment(
             principal: self.principal,
             rate: self.rate,
             term: self.term,
@@ -109,7 +109,7 @@ class AnnuityPaymentFromTotal: AnnuityPayment {
     private let frequency: Int
     
     lazy var value: NSDecimalNumber = {
-        return Annuity.getPayment(
+        return SwiftAnnuity.getPayment(
             total: self.total,
             term: self.term,
             frequency: self.frequency
@@ -141,7 +141,7 @@ class AnnuityTotalFromPayment: AnnuityTotal {
     private let frequency: Int
     
     lazy var value: NSDecimalNumber = {
-        return Annuity.getTotal(
+        return SwiftAnnuity.getTotal(
             payment: self.payment,
             term: self.term,
             frequency: self.frequency
@@ -164,7 +164,7 @@ class AnnuityTotalFromPrincipal: AnnuityTotal {
     private let frequency: Int
     
     lazy var value: NSDecimalNumber = {
-        return Annuity.getTotal(
+        return SwiftAnnuity.getTotal(
             principal: self.principal,
             rate: self.rate,
             term: self.term,
@@ -203,7 +203,7 @@ protocol AnnuityTotal {
     var value: NSDecimalNumber { get }
 }
 
-class Annuity {
+public class SwiftAnnuity {
     
     private let _principal: AnnuityPrincipal
     private let _payment: AnnuityPayment

@@ -17,7 +17,7 @@ class SwiftAnnuityTests: XCTestCase {
         let principal = NSDecimalNumber(string: "100000")
         let rate = NSDecimalNumber(string: "0.03")
         let term = 25
-        let annuity = Annuity(
+        let annuity = SwiftAnnuity(
             principal: principal,
             rate: rate,
             term: term
@@ -39,7 +39,7 @@ class SwiftAnnuityTests: XCTestCase {
         let principal = NSDecimalNumber(string: "100000")
         let rate = NSDecimalNumber(string: "0.03")
         let term = 25
-        let annuity = Annuity(
+        let annuity = SwiftAnnuity(
             principal: principal,
             rate: rate,
             term: term
@@ -61,7 +61,7 @@ class SwiftAnnuityTests: XCTestCase {
         let payment = NSDecimalNumber(string: "7500")
         let rate = NSDecimalNumber(string: "0.04")
         let term = 15
-        let annuity = Annuity(
+        let annuity = SwiftAnnuity(
             payment: payment,
             rate: rate,
             term: term
@@ -83,7 +83,7 @@ class SwiftAnnuityTests: XCTestCase {
         let payment = NSDecimalNumber(string: "7500")
         let rate = NSDecimalNumber(string: "0.04")
         let term = 15
-        let annuity = Annuity(
+        let annuity = SwiftAnnuity(
             payment: payment,
             rate: rate,
             term: term
@@ -105,7 +105,7 @@ class SwiftAnnuityTests: XCTestCase {
         let total = NSDecimalNumber(string: "600000")
         let rate = NSDecimalNumber(string: "0.05")
         let term = 15
-        let annuity = Annuity(
+        let annuity = SwiftAnnuity(
             total: total,
             rate: rate,
             term: term
@@ -127,7 +127,7 @@ class SwiftAnnuityTests: XCTestCase {
         let total = NSDecimalNumber(string: "600000")
         let rate = NSDecimalNumber(string: "0.05")
         let term = 15
-        let annuity = Annuity(
+        let annuity = SwiftAnnuity(
             total: total,
             rate: rate,
             term: term
@@ -150,7 +150,7 @@ class SwiftAnnuityTests: XCTestCase {
         let rate = NSDecimalNumber(string: "0.03")
         let term = 25
         let frequency = 12
-        let annuity = Annuity(
+        let annuity = SwiftAnnuity(
             principal: principal,
             rate: rate,
             term: term,
@@ -174,7 +174,7 @@ class SwiftAnnuityTests: XCTestCase {
         let rate = NSDecimalNumber(string: "0.04")
         let term = 15
         let frequency = 12
-        let annuity = Annuity(
+        let annuity = SwiftAnnuity(
             payment: payment,
             rate: rate,
             term: term,
