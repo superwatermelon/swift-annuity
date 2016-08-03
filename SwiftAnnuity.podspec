@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "SwiftAnnuity"
-  s.version       = "0.1.0"
+  s.version       = "0.1.1"
   s.summary       = "Swift library used to calculate annuity rates."
   s.description   = <<-DESC
                     It provides an object wrapper to be able to calculate
