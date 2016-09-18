@@ -7,3 +7,9 @@ before_install:
 install:
   - gem install cocoapods --install-dir vendor
   - vendor/bin/pod install
+script:
+  - xcodebuild test -workspace SwiftAnnuity.xcworkspace -scheme SwiftAnnuity -destination 'name=iPhone 6'
+  - vendor/bin/pod lib lint
+  - vendor/bin/pod spec lint
+after_success:
+  - vendor/bin/pod trunk push SwiftAnnuity.podspec
