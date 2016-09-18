@@ -12,8 +12,7 @@ import XCTest
 class SwiftAnnuityTests: XCTestCase {
     
     func testGetPaymentFromPrincipal() {
-        
-        
+
         let principal = NSDecimalNumber(string: "100000")
         let rate = NSDecimalNumber(string: "0.03")
         let term = 25
@@ -192,17 +191,17 @@ class SwiftAnnuityTests: XCTestCase {
         
     }
     
-    func roundDownToInt(value: NSDecimalNumber) -> Int {
-        return value.decimalNumberByRoundingAccordingToBehavior(
-            NSDecimalNumberHandler(
-                roundingMode: .RoundDown,
+    func roundDownToInt(_ value: NSDecimalNumber) -> Int {
+        return value.rounding(
+            accordingToBehavior: NSDecimalNumberHandler(
+                roundingMode: .down,
                 scale: 0,
                 raiseOnExactness: false,
                 raiseOnOverflow: false,
                 raiseOnUnderflow: false,
                 raiseOnDivideByZero: false
             )
-        ).integerValue
+        ).intValue
     }
     
 }

@@ -12,7 +12,7 @@ import SwiftDecimalNumber
 extension Int {
     
     func toDecimalNumber() -> NSDecimalNumber {
-        return NSDecimalNumber(decimal: NSNumber(integer: self).decimalValue)
+        return NSDecimalNumber(decimal: NSNumber(value: self as Int).decimalValue)
     }
     
 }
@@ -314,7 +314,7 @@ public class SwiftAnnuity {
      * everything else in this module is an object wrapper for the
      * values and lazy calculation. */
     
-    static func getPayment(principal principal: NSDecimalNumber, rate: NSDecimalNumber, term: Int, frequency: Int) -> NSDecimalNumber {
+    static func getPayment(principal: NSDecimalNumber, rate: NSDecimalNumber, term: Int, frequency: Int) -> NSDecimalNumber {
         
         let r = getRateOverTerm(
             rate: rate,
@@ -325,7 +325,7 @@ public class SwiftAnnuity {
         return principal * r
     }
     
-    static func getPayment(total total: NSDecimalNumber, term: Int, frequency: Int) -> NSDecimalNumber {
+    static func getPayment(total: NSDecimalNumber, term: Int, frequency: Int) -> NSDecimalNumber {
         
         let count = getPaymentCount(
             term: term,
@@ -335,7 +335,7 @@ public class SwiftAnnuity {
         return total / count
     }
     
-    static func getTotal(principal principal: NSDecimalNumber, rate: NSDecimalNumber, term: Int, frequency: Int) -> NSDecimalNumber {
+    static func getTotal(principal: NSDecimalNumber, rate: NSDecimalNumber, term: Int, frequency: Int) -> NSDecimalNumber {
         
         let payment = getPayment(
             principal: principal,
@@ -351,7 +351,7 @@ public class SwiftAnnuity {
         return getTotal(payment: payment, count: count)
     }
     
-    static func getTotal(payment payment: NSDecimalNumber, term: Int, frequency: Int) -> NSDecimalNumber {
+    static func getTotal(payment: NSDecimalNumber, term: Int, frequency: Int) -> NSDecimalNumber {
         return getTotal(
             payment: payment,
             count: getPaymentCount(
@@ -361,18 +361,18 @@ public class SwiftAnnuity {
         )
     }
     
-    static func getTotal(payment payment: NSDecimalNumber, count: Int) -> NSDecimalNumber {
+    static func getTotal(payment: NSDecimalNumber, count: Int) -> NSDecimalNumber {
         return getTotal(
             payment: payment,
             count: count.toDecimalNumber()
         )
     }
     
-    static func getTotal(payment payment: NSDecimalNumber, count: NSDecimalNumber) -> NSDecimalNumber {
+    static func getTotal(payment: NSDecimalNumber, count: NSDecimalNumber) -> NSDecimalNumber {
         return payment * count
     }
     
-    static func getPrincipal(payment payment: NSDecimalNumber, rate: NSDecimalNumber, term: Int, frequency: Int) -> NSDecimalNumber {
+    static func getPrincipal(payment: NSDecimalNumber, rate: NSDecimalNumber, term: Int, frequency: Int) -> NSDecimalNumber {
         
         let r = getRateOverTerm(
             rate: rate,
@@ -383,16 +383,16 @@ public class SwiftAnnuity {
         return payment / r
     }
     
-    static func getPrincipal(total total: NSDecimalNumber, rate: NSDecimalNumber, term: Int, frequency: Int) -> NSDecimalNumber {
+    static func getPrincipal(total: NSDecimalNumber, rate: NSDecimalNumber, term: Int, frequency: Int) -> NSDecimalNumber {
         
         let payment = getPayment(total: total, term: term, frequency: frequency)
         
         return getPrincipal(payment: payment, rate: rate, term: term, frequency: frequency)
     }
     
-    static func getRateOverTerm(rate rate: NSDecimalNumber, term: Int, frequency: Int) -> NSDecimalNumber {
+    static func getRateOverTerm(rate: NSDecimalNumber, term: Int, frequency: Int) -> NSDecimalNumber {
         
-        let r = rate / frequency.toDecimalNumber()
+        let r = (rate as NSDecimalNumber) / (frequency.toDecimalNumber() as NSDecimalNumber)
         let t = getPaymentCount(
             term: term,
             frequency: frequency
@@ -401,7 +401,7 @@ public class SwiftAnnuity {
         return (r * (1 + r) ** t) / ((1 + r) ** t - 1)
     }
     
-    static func getPaymentCount(term term: Int, frequency: Int) -> Int {
+    static func getPaymentCount(term: Int, frequency: Int) -> Int {
         return term * frequency
     }
     

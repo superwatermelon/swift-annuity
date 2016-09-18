@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17C318DD1C8A5974004274BC /* SwiftAnnuity.h in Headers */ = {isa = PBXBuildFile; fileRef = 17C318DC1C8A5974004274BC /* SwiftAnnuity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17C318E41C8A5974004274BC /* SwiftAnnuity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C318D91C8A5974004274BC /* SwiftAnnuity.framework */; };
 		17C318E91C8A5974004274BC /* SwiftAnnuityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C318E81C8A5974004274BC /* SwiftAnnuityTests.swift */; };
 		17C318F81C8A5B57004274BC /* SwiftAnnuity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C318F71C8A5B57004274BC /* SwiftAnnuity.swift */; };
@@ -34,7 +33,6 @@
 		0D1AB888C076B614369332F5 /* Pods-SwiftAnnuityTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAnnuityTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftAnnuityTests/Pods-SwiftAnnuityTests.release.xcconfig"; sourceTree = "<group>"; };
 		17967879440FEBE8F08C4973 /* Pods_SwiftAnnuity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftAnnuity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C318D91C8A5974004274BC /* SwiftAnnuity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftAnnuity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		17C318DC1C8A5974004274BC /* SwiftAnnuity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftAnnuity.h; sourceTree = "<group>"; };
 		17C318DE1C8A5974004274BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17C318E31C8A5974004274BC /* SwiftAnnuityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAnnuityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C318E81C8A5974004274BC /* SwiftAnnuityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAnnuityTests.swift; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 		17C318DB1C8A5974004274BC /* SwiftAnnuity */ = {
 			isa = PBXGroup;
 			children = (
-				17C318DC1C8A5974004274BC /* SwiftAnnuity.h */,
 				17C318DE1C8A5974004274BC /* Info.plist */,
 				17C318F71C8A5B57004274BC /* SwiftAnnuity.swift */,
 			);
@@ -143,7 +140,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17C318DD1C8A5974004274BC /* SwiftAnnuity.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,16 +194,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Superwatermelon Limited";
 				TargetAttributes = {
 					17C318D81C8A5974004274BC = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 4Y4NY54RDF;
+						LastSwiftMigration = 0800;
 					};
 					17C318E21C8A5974004274BC = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 4Y4NY54RDF;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -370,8 +368,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -418,8 +418,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -439,6 +441,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -450,7 +453,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 50D5878EA995D851801BC57E /* Pods-SwiftAnnuity.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -462,6 +467,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -469,7 +475,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EC2B5F404D004516293F12D4 /* Pods-SwiftAnnuity.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -480,6 +488,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.superwatermelon.swift.SwiftAnnuity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -487,10 +496,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 50B6B26F7A822EC0FA1BDBE9 /* Pods-SwiftAnnuityTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				INFOPLIST_FILE = SwiftAnnuityTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.superwatermelon.swift.SwiftAnnuityTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -498,10 +509,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0D1AB888C076B614369332F5 /* Pods-SwiftAnnuityTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				INFOPLIST_FILE = SwiftAnnuityTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.superwatermelon.swift.SwiftAnnuityTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

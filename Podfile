@@ -1,10 +1,12 @@
 use_frameworks!
 
+pod 'SwiftDecimalNumber', '~> 1.0.0-alpha'
+
 target 'SwiftAnnuity' do
-    pod 'SwiftDecimalNumber', '~> 0.1.1'
+    
 end
 
 target 'SwiftAnnuityTests' do
-    pod 'SwiftDecimalNumber', '~> 0.1.1'
+    
 end
 
