@@ -3,6 +3,13 @@ osx_image: xcode8
 rvm:
   - 2.2.2
 before_install:
+  gem uninstall cocoapods
   gem install cocoapods --install-dir vendor
 install:
   vendor/bin/pod install
+script:
+  xcodebuild test -workspace SwiftAnnuity.xcworkspace -scheme SwiftAnnuity -destination 'name=iPhone 6'
+  vendor/bin/pod lib lint
+  vendor/bin/pod spec lint
+deploy:
+  vendor/bin/pod trunk push SwiftAnnuity.podspec
