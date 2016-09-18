@@ -2,3 +2,5 @@ language: swift
 osx_image: xcode8
 before_install:
   gem update cocoapods
+install:
+  pod install
