@@ -3,12 +3,13 @@ osx_image: xcode8
 rvm:
   - 2.2.2
 before_install:
-  - gem install cocoapods
+  - gem install bundler
 install:
-  - pod install
+  - bundle
+  - bundle exec pod install
 script:
   - xcodebuild test -workspace SwiftAnnuity.xcworkspace -scheme SwiftAnnuity -destination 'name=iPhone 6'
-  - pod lib lint
-  - pod spec lint
+  - bundle exec pod lib lint
+  - bundle exec pod spec lint
 after_success:
-  - pod trunk push SwiftAnnuity.podspec
+  - bundle exec pod trunk push SwiftAnnuity.podspec
