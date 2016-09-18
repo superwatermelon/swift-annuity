@@ -7,5 +7,3 @@ before_install:
 install:
   - gem install cocoapods --install-dir vendor
   - vendor/bin/pod install
-deploy:
-  - vendor/bin/pod trunk push SwiftAnnuity.podspec
