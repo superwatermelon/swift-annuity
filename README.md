@@ -1,6 +1,33 @@
 # SwiftAnnuity
+##### Library for calculating annuity payments
+By [Stuart Wakefield](http://stuartwakefield.co.uk)
+
+- [Introduction]
+- [Requirements]
+- [Installation]
+- [Usage]
+- [API]
+
+## Introduction
 
 A Swift library used to calculate annuities.
+
+## Requirements
+
+* iOS 9.3
+* Xcode 8.0
+* Swift 3.0
+
+## Installation
+
+To install to use within your project use Cocoapods and add the following to
+your Podfile:
+
+```rb
+pod 'SwiftAnnuity', '1.0.0-alpha'
+```
+
+## Usage
 
 ```swift
 var annuity = SwiftAnnuity(
@@ -39,15 +66,6 @@ var annuity = SwiftAnnuity(
 )
 annuity.principal
 annuity.payment
-```
-
-## Installation
-
-To install to use within your project use Cocoapods and add the following to
-your Podfile:
-
-```
-pod 'SwiftAnnuity', '~> 0.1.1'
 ```
 
 ## API
@@ -91,3 +109,8 @@ Returns the total including interest for the `SwiftAnnuity` instance.
 
 Returns the payment amount for the `SwiftAnnuity` instance.
 
+[Introduction]: #introduction
+[Requirements]: #requirements
+[Installation]: #installation
+[Usage]: #usage
+[API]: #api
