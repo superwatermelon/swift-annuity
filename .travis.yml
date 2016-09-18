@@ -1,5 +1,7 @@
 language: swift
 osx_image: xcode8
+rvm:
+  - 2.2.2
 before_install:
   gem install cocoapods --install-dir vendor
 install:
