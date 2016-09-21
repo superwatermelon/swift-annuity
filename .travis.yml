@@ -1,5 +1,8 @@
-language: swift
+language: objective-c
 osx_image: xcode8
+xcode_sdk: iphonesimulator9.2
+xcode_workspace: SwiftAnnuity.xcworkspace
+xcode_scheme: SwiftAnnuity
 rvm:
   - 2.2.2
 before_install:
@@ -12,4 +15,4 @@ script:
   - bundle exec pod lib lint
   - bundle exec pod spec lint
 after_success:
-  - bundle exec pod trunk push SwiftAnnuity.podspec
+  - scripts/deploy.sh
