@@ -1,12 +1,12 @@
 PODS:
-  - SwiftDecimalNumber (1.0.0-alpha)
+  - SwiftDecimalNumber (1.0.3)
 
 DEPENDENCIES:
-  - SwiftDecimalNumber (= 1.0.0-alpha)
+  - SwiftDecimalNumber (~> 1.0.3)
 
 SPEC CHECKSUMS:
-  SwiftDecimalNumber: 2ce26607b11db537d32cb9e6effd90e5e5998a97
+  SwiftDecimalNumber: dc91ec24779d2a366694d05f9e54e2f5b2a2d230
 
-PODFILE CHECKSUM: efa62ba513dc57954c7122a82f24e9f5ae39e19a
+PODFILE CHECKSUM: 1f661e71ce36b22366904fae46dabb7f842f013f
 
 COCOAPODS: 1.1.0.rc.2
