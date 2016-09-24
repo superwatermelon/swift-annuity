@@ -14,5 +14,4 @@ install:
 script:
   - xcodebuild test -workspace SwiftAnnuity.xcworkspace -scheme SwiftAnnuity -destination 'name=iPhone 6'
   - bundle exec pod lib lint
-after_success:
   - scripts/deploy.sh
