@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name = "SwiftAnnuity"
 
-  s.version = "1.0.0-alpha"
+  s.version = "1.0.1"
 
   s.summary = "Swift library used to calculate annuity rates."
 
