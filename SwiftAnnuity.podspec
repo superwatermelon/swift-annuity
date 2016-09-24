@@ -25,8 +25,8 @@ Pod::Spec.new do |s|
     :tag => "#{s.version}"
   }
 
-  s.source_files = "SwiftAnnuity/**/*"
+  s.source_files = "Sources/**/*.swift"
 
-  s.dependency "SwiftDecimalNumber", "~> 1.0.0-alpha"
+  s.dependency "SwiftDecimalNumber", "~> 1.0.3"
 
 end
